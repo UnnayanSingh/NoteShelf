@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Downloads - NoteShelf</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+<div class="max-w-4xl mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">My Purchased PDFs</h2>
+
+    {% for f in files %}
+    <div class="bg-white p-4 rounded shadow mb-3">
+        <a href="/download/{{ f[1] }}"
+           class="text-blue-600 font-semibold">
+            ⬇ {{ f[0] }}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

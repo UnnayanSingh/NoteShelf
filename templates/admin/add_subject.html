@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Subject - NoteShelf</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white p-8 rounded shadow w-full max-w-lg">
+    <h2 class="text-2xl font-bold mb-6 text-center">Add New Subject</h2>
+
+    <form method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Subject Name"
+               class="w-full border p-2 rounded" required>
+
+        <textarea name="description" placeholder="Subject Description"
+                  class="w-full border p-2 rounded" rows="4"></textarea>
+
+        <button class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
+            Add Subject
+        </button>
+    </form>
+
+    <a href="/admin/dashboard"
+       class="block text-center text-blue-600 mt-4">
+        ← Back to Dashboard
+    </a>
+</div>
+
+</body>
+</html>

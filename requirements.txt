@@ -1,0 +1,6 @@
+flask
+flask-mysqldb
+werkzeug
+razorpay
+gunicorn
+python-dotenv

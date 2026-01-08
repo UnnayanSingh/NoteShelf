@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload PDF - NoteShelf</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white p-8 rounded shadow w-full max-w-lg">
+    <h2 class="text-2xl font-bold mb-6 text-center">Upload PDF Notes</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-4">
+
+        <input type="text" name="title" placeholder="PDF Title"
+               class="w-full border p-2 rounded" required>
+
+        <select name="subject" class="w-full border p-2 rounded" required>
+            {% for s in subjects %}
+            <option value="{{ s[0] }}">{{ s[1] }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="number" name="price" placeholder="Price (₹)"
+               class="w-full border p-2 rounded" required>
+
+        <input type="file" name="pdf" accept=".pdf"
+               class="w-full border p-2 rounded" required>
+
+        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+            Upload PDF
+        </button>
+    </form>
+
+    <a href="/admin/dashboard"
+       class="block text-center text-blue-600 mt-4">
+        ← Back to Dashboard
+    </a>
+</div>
+
+</body>
+</html>

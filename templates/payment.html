@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment - NoteShelf</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white p-8 rounded shadow text-center">
+    <h2 class="text-2xl font-bold mb-4">Confirm Payment</h2>
+    <p class="mb-6">{{ pdf[2] }} – ₹{{ pdf[3] }}</p>
+
+    <button id="pay"
+        class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+        Pay Now
+    </button>
+</div>
+
+<script>
+var rzp = new Razorpay({
+    key: "{{ key }}",
+    amount: "{{ order.amount }}",
+    currency: "INR",
+    order_id: "{{ order.id }}",
+    handler: function(res){
+        window.location.href =
+        "/payment-success?pid={{ pdf[0] }}&pay_id=" + res.razorpay_payment_id;
+    }
+});
+document.getElementById("pay").onclick = function(){
+    rzp.open();
+}
+</script>
+
+</body>
+</html>
