@@ -28,6 +28,7 @@ NoteShelf is a full-stack web application built using **Flask** and **MySQL** th
 ## 📸 Application Screenshots
 ### 🏠 Landing Page
 Welcome page showcasing the platform and providing access to user and admin portals.
+
 <img width="1506" height="852" alt="Screenshot 2026-06-14 212752" src="https://github.com/user-attachments/assets/cb661cc0-fa14-445f-a257-fa10e525a5b2" />
 
 ### 🔐 User Login Page
